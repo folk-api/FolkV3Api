@@ -1,0 +1,18 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Us.FolkV3.Api.Model
+{
+    public class PublicId : Id
+    {
+        private PublicId(int value) : base(value) { }
+
+        public static PublicId Create(int value) => new PublicId(value);
+
+        public static IList<PublicId> Create(params int[] values)
+        {
+            return values.Select(e => Create(e)).ToList();
+        }
+
+    }
+}
