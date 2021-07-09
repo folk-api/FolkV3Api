@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B941F1B-047E-4935-9ABA-EDEB91AFECB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Us.FolkV3.Api</RootNamespace>
+    <AssemblyName>FolkV3Api</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\BaseClient.cs" />
+    <Compile Include="Client\FolkApiException.cs" />
+    <Compile Include="Client\FolkClient.cs" />
+    <Compile Include="Client\HeldinConfig.cs" />
+    <Compile Include="Client\Mapper\ChangesMapper.cs" />
+    <Compile Include="Client\Mapper\ClientMapper.cs" />
+    <Compile Include="Client\Mapper\CommunityPersonMapper.cs" />
+    <Compile Include="Client\Mapper\EnumMapper.cs" />
+    <Compile Include="Client\Mapper\Mapper.cs" />
+    <Compile Include="Client\Mapper\PersonBaseMapper.cs" />
+    <Compile Include="Client\Mapper\PersonSmallMapper.cs" />
+    <Compile Include="Client\Mapper\PersonMediumMapper.cs" />
+    <Compile Include="Client\Mapper\PrivateChangesMapper.cs" />
+    <Compile Include="Client\Mapper\PublicChangesMapper.cs" />
+    <Compile Include="Client\Mapper\SystemMapper.cs" />
+    <Compile Include="Client\MoreThanOneException.cs" />
+    <Compile Include="Client\PersonSmallClient.cs" />
+    <Compile Include="Client\PersonMediumClient.cs" />
+    <Compile Include="Client\PrivateCommunityClient.cs" />
+    <Compile Include="Client\PrivilegesMediumClient.cs" />
+    <Compile Include="Client\PrivilegesSmallClient.cs" />
+    <Compile Include="Client\PublicCommunityClient.cs" />
+    <Compile Include="Client\ResponseStatus.cs" />
+    <Compile Include="Client\ResponseStatusException.cs" />
+    <Compile Include="Client\ResponseWrapper.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\BaseSsn.cs" />
+    <Compile Include="Model\Changes.cs" />
+    <Compile Include="Model\CivilStatus.cs" />
+    <Compile Include="Model\CivilStatusType.cs" />
+    <Compile Include="Model\CommunityPerson.cs" />
+    <Compile Include="Model\CommunityPersonStatus.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Cpr.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\Guardian.cs" />
+    <Compile Include="Model\HouseNumber.cs" />
+    <Compile Include="Model\Id.cs" />
+    <Compile Include="Model\Incapacity.cs" />
+    <Compile Include="Model\Name.cs" />
+    <Compile Include="Model\Param\AddressParam.cs" />
+    <Compile Include="Model\Param\NameParam.cs" />
+    <Compile Include="Model\PersonSmall.cs" />
+    <Compile Include="Model\PersonMedium.cs" />
+    <Compile Include="Model\PrivateId.cs" />
+    <Compile Include="Model\Ptal.cs" />
+    <Compile Include="Model\PublicId.cs" />
+    <Compile Include="Model\SpecialMarks.cs" />
+    <Compile Include="Model\SpecialMarkType.cs" />
+    <Compile Include="Model\Ssn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Wsdl\UsFolkService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Wsdl\us-folk-v3.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
